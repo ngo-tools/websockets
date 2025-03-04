@@ -3,7 +3,6 @@
 namespace App;
 
 use App\Services\NgoTools;
-use Illuminate\Support\Facades\Http;
 use Laravel\Reverb\ConfigApplicationProvider;
 
 class ApplicationManager extends \Laravel\Reverb\ApplicationManager

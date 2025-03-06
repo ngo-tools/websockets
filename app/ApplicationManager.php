@@ -9,6 +9,10 @@ class ApplicationManager extends \Laravel\Reverb\ApplicationManager
 {
     public function createConfigDriver(): ConfigApplicationProvider
     {
+        $apps = $this->getApps();
+
+        info('Starting websocket for the following apps: ' . $apps->pluck('app_id')->implode(', '));
+
         return new ConfigApplicationProvider(
             collect($this->getApps())
         );
@@ -16,6 +20,6 @@ class ApplicationManager extends \Laravel\Reverb\ApplicationManager
 
     private function getApps()
     {
-        return NgoTools::make()->getWebsocketApps();
+        return collect(NgoTools::make()->getWebsocketApps());
     }
 }

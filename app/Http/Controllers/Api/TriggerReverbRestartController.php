@@ -15,7 +15,7 @@ class TriggerReverbRestartController extends Controller
 
     public function __invoke(Request $request)
     {
-        if($request->header('token') != config('ngo.api-token')){
+        if($request->bearerToken() != config('ngo.api-token')){
             abort(401);
         }
 

@@ -2,9 +2,7 @@
 
 namespace App\Providers;
 
-use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
-use Laravel\Reverb\ApplicationManager;
 use Laravel\Reverb\Contracts\ApplicationProvider;
 
 class ReverbApplicationManagerServiceProvider extends ServiceProvider

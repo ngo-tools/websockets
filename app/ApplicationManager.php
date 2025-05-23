@@ -13,9 +13,7 @@ class ApplicationManager extends \Laravel\Reverb\ApplicationManager
 
         info('Starting websocket for the following apps: ' . $apps->pluck('app_id')->implode(', '));
 
-        return new ConfigApplicationProvider(
-            collect($this->getApps())
-        );
+        return new ConfigApplicationProvider($apps);
     }
 
     private function getApps()
